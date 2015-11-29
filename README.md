@@ -72,7 +72,7 @@ freePercent()
 
 Returns the amount of free memory as a percentage eg `83.9430437`.
 
-freePercent()
+usedPercent()
 -------------
 
 Returns the amount of used memory as a percentage eg `13.9430437`.
