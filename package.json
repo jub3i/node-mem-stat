@@ -1,5 +1,5 @@
 {
-  "name": "node-mem-stat",
+  "name": "mem-stat",
   "version": "1.0.1",
   "description": "Memory statistics, not provided by `os` module.",
   "main": "index.js",
