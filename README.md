@@ -40,9 +40,13 @@ console.log(free);
 var usedPercent = memStat.usedPercent('GiB');
 console.log(usedPercent);
 
-//get all fields available from `/proc/meminfo`
+//get all the calculated statistics, requiring only one read and parse of `/proc/meminfo`
 var allStats = memStat.raw();
 console.log(allStats);
+
+//get all fields available from `/proc/meminfo` as an object
+var raw = memStat.raw();
+console.log(raw);
 ```
 
 free(units)
