@@ -1,6 +1,6 @@
 {
   "name": "mem-stat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Memory statistics, not provided by `os` module.",
   "main": "index.js",
   "scripts": {
