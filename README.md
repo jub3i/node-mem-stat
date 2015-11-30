@@ -15,7 +15,7 @@ mem-stat
 
 **Note:** This repo can be found on github here: [node-mem-stat](https://github.com/jub3i/node-mem-stat)
 
-**Caveat:** Works by parsing `/proc/meminfo` - so will only work on nix OS.
+**Caveat:** Works by parsing `/proc/meminfo`, so will only work on nix OS.
 
 Install
 -------
