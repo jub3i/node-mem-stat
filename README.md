@@ -46,7 +46,7 @@ console.log(free);
 
 `usedPercent()` returns the percentage memory used eg. `13.359272`:
 ```
-var usedPercent = memStat.usedPercent('GiB');
+var usedPercent = memStat.usedPercent();
 console.log(usedPercent);
 ```
 
