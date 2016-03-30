@@ -52,7 +52,7 @@ console.log(usedPercent);
 
 Get all the calculated statistics, requiring only one read and parse of `/proc/meminfo`:
 ```
-var allStats = memStat.raw();
+var allStats = memStat.allStats();
 console.log(allStats);
   {
     free: 1000,
