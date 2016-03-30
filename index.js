@@ -105,7 +105,7 @@ function _parseProcMeminfo(cb) {
       return cb(null, _formatParsedProcMeminfo(meminfo));
     });
   }
-  
+
   var meminfo = fs.readFileSync('/proc/meminfo');
   return _formatParsedProcMeminfo(meminfo);
 }
