@@ -66,6 +66,16 @@ Get all fields available from `/proc/meminfo` formatted as an object, see docs b
 ```
 var raw = memStat.raw();
 console.log(raw);
+``
+
+``
+//or use the callback style
+memStat.raw(function(err, raw) {
+  if (err) {
+    return console.log(err);
+  }
+  console.log(raw);
+});
 ```
 
 free(units)
@@ -114,10 +124,15 @@ Option        | Type         | Default       | Explanation
 ------------- | -------------| ------------- | ------------
 units         | `String`     | `'bytes'`     | The units of the returned value, can be one of `bytes`, `KiB`, `MiB` or `GiB`.
 
-raw()
+raw([cb])
 -----
 
 Returns an object representing the data in `/proc/meminfo`.
+
+Option  | Type         | Default                                          | Explanation
+------- | -------------| ------------------------------------------------ | ------------
+cb      | `Function`   | If no callback is specified, uses sync file read | Gives the user the option of using a callback style interface.
+
 
 ```
   {
