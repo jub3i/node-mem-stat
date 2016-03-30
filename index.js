@@ -100,7 +100,7 @@ function _usedPercent(meminfo) {
 //NOTE: docs at `man proc`
 function _parseProcMeminfo(cb) {
   if (cb && typeof cb === 'function') {
-    return fs.readFile('/proc/meminfo', function (err, meminfo) {
+    return fs.readFile('/proc/meminfo', function(err, meminfo) {
       if (err) return cb(err);
       return cb(null, _formatParsedProcMeminfo(meminfo));
     });
