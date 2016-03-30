@@ -43,8 +43,8 @@ function allStats(units) {
 }
 
 //raw `/proc/meminfo` as object
-function raw() {
-  return _parseProcMeminfo();
+function raw(cb) {
+  return _parseProcMeminfo(cb);
 }
 
 /* PRIVATE */
@@ -98,8 +98,19 @@ function _usedPercent(meminfo) {
 }
 
 //NOTE: docs at `man proc`
-function _parseProcMeminfo() {
+function _parseProcMeminfo(cb) {
+  if (cb) {
+    return fs.readFile('/proc/meminfo', function (err, meminfo) {
+      if (err) return cb(err);
+      return cb(null, _formatParsedProcMeminfo(meminfo));
+    });
+  }
+  
   var meminfo = fs.readFileSync('/proc/meminfo');
+  return _formatParsedProcMeminfo(meminfo);
+}
+
+function _formatParsedProcMeminfo(meminfo) {
   var lines = meminfo.toString().split('\n');
 
   //remove last blank line
